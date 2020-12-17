@@ -147,6 +147,103 @@ namespace Tomi_szalloda_2020._12._08
                 }
             }
             ir.Close();
+
+            //4
+            int[] napok = { 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334};
+            int ejszakak_szama = 0;
+            for (int i = 0;i<11;i++)
+            {
+                ejszakak_szama = 0;
+                for (int j = 0; j < n;j++)
+                {
+                    /*if (adatok[j].erkezesnap<= 31)
+                    {
+                        ejszakak_szama += (adatok[j].tavozasnap - adatok[j].erkezesnap) * adatok[j].vendegszam;
+                    }
+                    if (napok[i] < adatok[j].erkezesnap && adatok[j].erkezesnap <= 334 && adatok[j].erkezesnap <= napok[i+1])
+                    {
+                        ejszakak_szama += (adatok[j].tavozasnap - adatok[j].erkezesnap) * adatok[j].vendegszam;
+                    }
+                    if(adatok[j].erkezesnap>334) 
+                    {
+                        ejszakak_szama += (adatok[j].tavozasnap - adatok[j].erkezesnap) * adatok[j].vendegszam;
+                    }*/
+
+                    if (adatok[j].erkezesnap <= 31)
+                    {
+                        ejszakak_szama += (adatok[j].tavozasnap - adatok[j].erkezesnap) * adatok[j].vendegszam;
+                      
+
+                    }
+
+                    if (31< adatok[j].erkezesnap && adatok[j].erkezesnap <= 59)
+                    {
+                        ejszakak_szama += (adatok[j].tavozasnap - adatok[j].erkezesnap) * adatok[j].vendegszam;
+                       
+                       
+                    }
+                    if (59 < adatok[j].erkezesnap && adatok[j].erkezesnap <= 90)
+                    {
+                        ejszakak_szama += (adatok[j].tavozasnap - adatok[j].erkezesnap) * adatok[j].vendegszam;
+                       
+                    }
+                    if (90 < adatok[j].erkezesnap && adatok[j].erkezesnap <= 120)
+                    {
+                        ejszakak_szama += (adatok[j].tavozasnap - adatok[j].erkezesnap) * adatok[j].vendegszam;
+                     
+                    }
+                    if (120 < adatok[j].erkezesnap && adatok[j].erkezesnap <= 151)
+                    {
+                        ejszakak_szama += (adatok[j].tavozasnap - adatok[j].erkezesnap) * adatok[j].vendegszam;
+                       
+                    }
+                    if (151 < adatok[j].erkezesnap && adatok[j].erkezesnap <= 181)
+                    {
+                        ejszakak_szama += (adatok[j].tavozasnap - adatok[j].erkezesnap) * adatok[j].vendegszam;
+                    }    
+                    if (181 < adatok[j].erkezesnap && adatok[j].erkezesnap <= 212)
+                    {
+                        ejszakak_szama += (adatok[j].tavozasnap - adatok[j].erkezesnap) * adatok[j].vendegszam;
+                        
+                    }
+                    if (212 < adatok[j].erkezesnap && adatok[j].erkezesnap <= 243)
+                    {
+                        ejszakak_szama += (adatok[j].tavozasnap - adatok[j].erkezesnap) * adatok[j].vendegszam;
+                        
+                    }
+                    if (243 < adatok[j].erkezesnap && adatok[j].erkezesnap <= 273)
+                    {
+                        ejszakak_szama += (adatok[j].tavozasnap - adatok[j].erkezesnap) * adatok[j].vendegszam;
+                        
+                    }
+                    if (273 < adatok[j].erkezesnap && adatok[j].erkezesnap <= 304)
+                    {
+                        ejszakak_szama += (adatok[j].tavozasnap - adatok[j].erkezesnap) * adatok[j].vendegszam;
+                        
+                    }
+                    if (304 < adatok[j].erkezesnap && adatok[j].erkezesnap <= 334)
+                    {
+                        ejszakak_szama += (adatok[j].tavozasnap - adatok[j].erkezesnap) * adatok[j].vendegszam;
+                        
+                    }
+                    if (adatok[j].erkezesnap >334)
+                    {
+                        ejszakak_szama += (adatok[j].tavozasnap - adatok[j].erkezesnap) * adatok[j].vendegszam;
+                        
+                    }
+                }
+
+                Console.WriteLine($"{i+1}: {ejszakak_szama} vendégéj");
+                ejszakak_szama = 0;
+            }
+            for (int i =0;i<n;i++)
+            {
+                if (adatok[i].erkezesnap <= 334 && adatok[i].erkezesnap >304)
+                {
+                    ejszakak_szama += (adatok[i].tavozasnap - adatok[i].erkezesnap) * adatok[i].vendegszam;
+                }
+            }
+            Console.WriteLine($"nov: {ejszakak_szama}");
             Console.ReadKey();
         }
     }
