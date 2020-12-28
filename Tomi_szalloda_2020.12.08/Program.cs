@@ -166,8 +166,41 @@ namespace Tomi_szalloda_2020._12._08
                 ejszakak_szama = 0;
             }
 
+            //5
+            Console.Write("Kérem adja meg a kezdő dátumhoz tartozó nap sorszámát: ");
+            int erkezesnap = int.Parse(Console.ReadLine());
+            Console.Write("Kérem adja meg az eltöltendő napok számát: ");
+            int eltoltendonapok = int.Parse(Console.ReadLine());
+            int[] foglalt_szobaszam = new int[27];
+            int szoba_szama = 27;
+            for (int i =0;i<foglalt_szobaszam.Length;i++)
+            {
+                foglalt_szobaszam[i] = i + 1;
+            }
             
+            foreach (var i in adatok)
+            {
+                if (i.tavozasnap >= erkezesnap && i.erkezesnap <= erkezesnap + eltoltendonapok)
+                {                 
+                    if (foglalt_szobaszam[i.szobaszam - 1] != 0)
+                    {
+                        foglalt_szobaszam[i.szobaszam - 1] = 0;
+                        szoba_szama--;
+                    }                 
+                }
+            }
+            for (int i = 0;i<foglalt_szobaszam.Length;i++)
+            {
+                if (foglalt_szobaszam[i] != 0)
+                {
+                  
+                    Console.Write($"{foglalt_szobaszam[i]} ");
+                    
+                }
+            }
+            Console.WriteLine($"\n{szoba_szama}");
             Console.ReadKey();
+
         }
     }
 }
